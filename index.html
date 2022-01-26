@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMT Examples</title>
+</head>
+<body>
+    <!-- 1 -->
+    <input type="text" id="inputOne" placeholder="Accept one" title="hf_use_description"/>
+    <!-- 2 -->
+    <input type="text" id="inputTwo" placeholder="Accept two" title="hf_show_text|hf_persists|hf_use_description"/>
+    <!-- 3 -->
+    <div>
+        <input name="checkboxThree" type="checkbox" id="checkboxThree"/>
+        <label for="checkboxThree">Accept three</label>
+    </div>
+    <!-- 4 -->
+    <div>
+        <input name="checkboxFour" type="checkbox" id="checkboxFour" title="hf_make_clickable|hf_no_number|hf_use_description|Accept four"/>
+        <label for="checkboxFour">Accept four</label>
+    </div>
+    <!-- 5 -->
+    <div>
+        <input name="checkboxFive" type="checkbox" id="checkboxFive" title="hf_make_clickable|hf_show_text|hf_use_description|Accept five"/>
+        <label for="checkboxFive">Accept five</label>
+    </div>
+    <!-- 6 -->
+    <div>
+        <input name="checkboxSix" type="checkbox" id="checkboxSix" title="hf_use_description|Accept six"/>
+        <label for="checkboxSix">Accept six</label>
+    </div>
+    <!-- 7 -->
+    <div>
+        <input name="checkboxSeven" type="password" id="checkboxSeven" title="hf_use_description|Accept seven"/>
+        <label for="checkboxSeven">Accept seven</label>
+    </div>
+    <!-- 8, 9 -->
+    <form>
+        <input type="radio" id="first" value="first" name="hmtRadio" title="hf_use_description|Accept eight">
+        <label for="first">first</label><br>
+        <input type="radio" id="second" value="second" name="hmtRadio" title="hf_use_description|Accept nine">
+        <label for="second">second</label><br>
+    </form>
+    <!-- 10 -->
+    <input type="button" onclick="alert('Accept ten')" title="hf_use_description|Accept ten" value="Accept ten">
+    <script>
+        window.addEventListener('keypress', e => {
+            if (e.keyCode == 34) {
+                alert('page down event');
+            }
+        });
+        window.scrollUp = () => {
+            const scrollableBlock = document.getElementById('scrollDiv');
+
+            scrollableBlock.scrollTo(0, 0);
+        };
+        window.scrollDown = () => {
+            const scrollableBlock = document.getElementById('scrollDiv');
+
+            scrollableBlock.scrollTo(0, scrollableBlock.scrollHeight);
+        };
+    </script>
+    <div style="margin: 0 auto; width: 300px; padding-bottom: 20px;">
+        <button onclick="scrollUp()">
+            scroll up
+        </button>
+        <button onclick="scrollDown()">
+            scroll down
+        </button>
+    </div>
+    <div id ="scrollDiv" style="margin: 0 auto; border: 1px solid black; height: 150px; width: 300px; overflow: scroll">
+        <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+    </div>
+</body>
+</html>
