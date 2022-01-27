@@ -25,6 +25,11 @@
         <input name="checkboxFive" type="checkbox" id="checkboxFive" title="hf_make_clickable|hf_show_text|hf_use_description|Accept five"/>
         <label for="checkboxFive">Accept five</label>
     </div>
+    <!-- 0 -->
+    <div>
+        <input name="checkboxZero" style="visibility: hidden;" type="checkbox" id="checkboxZero" title="hf_make_clickable|hf_show_text|hf_use_description|Accept zero"/>
+        <label for="checkboxFive">Accept zero</label>
+    </div>
     <!-- 6 -->
     <div>
         <input name="checkboxSix" type="checkbox" id="checkboxSix" title="hf_use_description|Accept six"/>
@@ -42,8 +47,6 @@
         <input type="radio" id="second" value="second" name="hmtRadio" title="hf_use_description|Accept nine">
         <label for="second">second</label><br>
     </form>
-    <!-- 10 -->
-    <input type="button" onclick="alert('Accept ten')" title="hf_use_description|Accept ten" value="Accept ten">
     <script>
         window.addEventListener('keypress', e => {
             if (e.keyCode == 34) {
@@ -60,7 +63,26 @@
 
             scrollableBlock.scrollTo(0, scrollableBlock.scrollHeight);
         };
+
+        window.clickEleven = () => {
+            document.querySelector('body').style.backgroundColor = 'pink';
+        };
+
+        window.clickTen = () => {
+            document.querySelector('body').style.backgroundColor = 'blue';
+        };
+
+        window.clickTwelve = () => {
+            document.querySelector('body').style.backgroundColor = 'green';
+        };
+
+        window.clickZero = () => {
+            document.querySelector('body').style.backgroundColor = 'red';
+        };
     </script>
+    <!-- 10 -->
+    <input type="button" onclick="clickTen()" title="hf_make_clickable|hf_show_text|hf_use_description|Accept ten" value="Accept ten">
+
     <div style="margin: 0 auto; width: 300px; padding-bottom: 20px;">
         <button onclick="scrollUp()">
             scroll up
@@ -69,10 +91,18 @@
             scroll down
         </button>
     </div>
-    <div id ="scrollDiv" style="margin: 0 auto; border: 1px solid black; height: 150px; width: 300px; overflow: scroll">
+    <div id ="scrollDiv" style="margin: 0 auto; border: 1px solid black; height: 300px; width: 300px; overflow: scroll">
         <div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </div>
     </div>
+
+    <!-- 11 -->
+    <input type="button" onclick="clickEleven()" title="hf_show_text|hf_use_description|Accept Eleven" value="Accept Eleven">
+
+    <!-- 12 -->
+    <button onclick="clickTwelve()">
+        Accept Twelve
+    </button>
 </body>
 </html>
