@@ -6,6 +6,7 @@
     <title>HMT Examples</title>
 </head>
 <body>
+    <p id="user-agent"></p>
     <!-- 1 -->
     <input type="text" id="inputOne" placeholder="Accept one" title="hf_use_description"/>
     <!-- 2 -->
@@ -48,6 +49,8 @@
         <label for="second">second</label><br>
     </form>
     <script>
+        document.querySelector('#user-agent').textContent = 'User Agent: ' + navigator.userAgent;
+
         window.addEventListener('keypress', e => {
             if (e.keyCode == 34) {
                 alert('page down event');
